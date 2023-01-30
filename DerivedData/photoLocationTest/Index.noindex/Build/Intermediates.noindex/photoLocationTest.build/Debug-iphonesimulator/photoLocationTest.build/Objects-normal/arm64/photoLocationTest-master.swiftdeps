@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "a7ca895d2b5da60449f44ed9fc4d35be534e4446f27295ef649f2f4d38bd24d7"
+build_start_time: [1675100797, 338618993]
+build_end_time: [1675100800, 658988]
+inputs:
+  "/Users/gomezdaviddiego/Documents/MyStuff/iOS/UIKit/photoLocationTest/photoLocationTest/AppDelegate.swift": [1675100792, 267381668]
+  "/Users/gomezdaviddiego/Documents/MyStuff/iOS/UIKit/photoLocationTest/photoLocationTest/SceneDelegate.swift": [1675100792, 269643783]
+  "/Users/gomezdaviddiego/Documents/MyStuff/iOS/UIKit/photoLocationTest/photoLocationTest/ViewController.swift": [1675100792, 270680427]
