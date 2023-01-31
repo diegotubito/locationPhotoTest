@@ -12,7 +12,6 @@
 		65079C24298839F800525FEA /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65079C22298839F800525FEA /* Splash.storyboard */; };
 		65079C29298839F900525FEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65079C28298839F900525FEA /* Assets.xcassets */; };
 		65079C2C298839F900525FEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65079C2A298839F900525FEA /* LaunchScreen.storyboard */; };
-		65079C37298839F900525FEA /* photoLocationTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C36298839F900525FEA /* photoLocationTestTests.swift */; };
 		65079C41298839F900525FEA /* photoLocationTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C40298839F900525FEA /* photoLocationTestUITests.swift */; };
 		65079C43298839F900525FEA /* photoLocationTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C42298839F900525FEA /* photoLocationTestUITestsLaunchTests.swift */; };
 		65079C5729884A4800525FEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C5629884A4800525FEA /* HomeViewController.swift */; };
@@ -29,6 +28,8 @@
 		65079C832988938C00525FEA /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65079C822988938C00525FEA /* Detail.storyboard */; };
 		6545CC1529899182001090B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6545CC1429899182001090B4 /* Localizable.strings */; };
 		654757E42989A33900F3FE10 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654757E32989A33900F3FE10 /* HomeViewController+Extension.swift */; };
+		654757E82989C1FC00F3FE10 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654757E72989C1FC00F3FE10 /* TestCoreDataStack.swift */; };
+		654757EA2989C26300F3FE10 /* CoreDataPhotoTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654757E92989C26300F3FE10 /* CoreDataPhotoTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,7 +58,6 @@
 		65079C2B298839F900525FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65079C2D298839F900525FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		65079C32298839F900525FEA /* photoLocationTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoLocationTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		65079C36298839F900525FEA /* photoLocationTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoLocationTestTests.swift; sourceTree = "<group>"; };
 		65079C3C298839F900525FEA /* photoLocationTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoLocationTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65079C40298839F900525FEA /* photoLocationTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoLocationTestUITests.swift; sourceTree = "<group>"; };
 		65079C42298839F900525FEA /* photoLocationTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoLocationTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -75,6 +75,8 @@
 		65079C822988938C00525FEA /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 		6545CC1429899182001090B4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		654757E32989A33900F3FE10 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
+		654757E72989C1FC00F3FE10 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		654757E92989C26300F3FE10 /* CoreDataPhotoTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPhotoTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +137,8 @@
 		65079C35298839F900525FEA /* photoLocationTestTests */ = {
 			isa = PBXGroup;
 			children = (
-				65079C36298839F900525FEA /* photoLocationTestTests.swift */,
+				654757E72989C1FC00F3FE10 /* TestCoreDataStack.swift */,
+				654757E92989C26300F3FE10 /* CoreDataPhotoTest.swift */,
 			);
 			path = photoLocationTestTests;
 			sourceTree = "<group>";
@@ -392,7 +395,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65079C37298839F900525FEA /* photoLocationTestTests.swift in Sources */,
+				654757E82989C1FC00F3FE10 /* TestCoreDataStack.swift in Sources */,
+				654757EA2989C26300F3FE10 /* CoreDataPhotoTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +625,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UEQ3F6V5RW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
@@ -640,6 +645,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UEQ3F6V5RW;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
@@ -658,6 +664,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UEQ3F6V5RW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ddg.photoLocationTestUITests;
@@ -675,6 +682,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UEQ3F6V5RW;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = ddg.photoLocationTestUITests;
