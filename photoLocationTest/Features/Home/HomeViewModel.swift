@@ -10,7 +10,7 @@ import CoreData
 
 protocol HomeViewModelProtocol {
     func getPhotos()
-    func savePhoto(image: UIImage)
+    func savePhoto(_ image: UIImage,_ latitude: Double,_ longitude: Double)
     func getList() -> [Photo]
     
     var onUpdateList: (() -> Void)? { get set }
@@ -41,7 +41,7 @@ class HomeViewModel: HomeViewModelProtocol {
         image.jpegData(compressionQuality: 1)
     }
         
-    func savePhoto(image: UIImage) {
+    func savePhoto(_ image: UIImage,_ latitude: Double,_ longitude: Double) {
         guard let thumbnail = getThumbnail(image: image),
               let imageData = getImageData(image: image)
         else { return }
@@ -51,7 +51,9 @@ class HomeViewModel: HomeViewModelProtocol {
         newPhoto.setValue(Date(), forKey: #keyPath(Photo.createdAt))
         newPhoto.setValue(thumbnail, forKey: #keyPath(Photo.thumbnail))
         newPhoto.setValue( NSData(data: imageData), forKey: #keyPath(Photo.image))
-        
+        newPhoto.setValue(latitude, forKey: #keyPath(Photo.latitude))
+        newPhoto.setValue(longitude, forKey: #keyPath(Photo.longitude))
+
         self.model.list.insert(newPhoto, at: 0)
         AppDelegate.sharedAppDelegate.coreDataStack.saveContext() // Save changes in CoreData
         

@@ -25,5 +25,6 @@ class DetailViewController: UIViewController {
               let imageData = photo.image,
               let image = UIImage(data: imageData) else { return }
         imageView.image = image
+        locationLabel.text = "Latitude: \(photo.latitude)\nLongitude: \(photo.longitude)"
     }
 }

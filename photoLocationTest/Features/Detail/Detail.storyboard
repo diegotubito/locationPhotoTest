@@ -17,10 +17,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iC9-lu-qNm">
-                                <rect key="frame" x="0.0" y="47" width="390" height="710"/>
+                                <rect key="frame" x="0.0" y="47" width="390" height="675.33333333333337"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrT-60-O6Y">
-                                <rect key="frame" x="16" y="773" width="358" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XrT-60-O6Y">
+                                <rect key="frame" x="16" y="722.33333333333337" width="358" height="20.333333333333371"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -30,12 +30,12 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XrT-60-O6Y" secondAttribute="trailing" constant="16" id="5G5-Pz-9Qs"/>
-                            <constraint firstItem="iC9-lu-qNm" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.841232" id="Epi-YQ-XPO"/>
+                            <constraint firstItem="iC9-lu-qNm" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.8" id="Epi-YQ-XPO"/>
                             <constraint firstItem="XrT-60-O6Y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="KvQ-R8-yFO"/>
                             <constraint firstItem="iC9-lu-qNm" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="YKD-s1-pPu"/>
                             <constraint firstItem="XrT-60-O6Y" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="agM-cl-IcP"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="XrT-60-O6Y" secondAttribute="trailing" constant="16" id="cih-JR-JDm"/>
-                            <constraint firstItem="XrT-60-O6Y" firstAttribute="top" secondItem="iC9-lu-qNm" secondAttribute="bottom" constant="16" id="gjs-Fx-zLJ"/>
+                            <constraint firstItem="XrT-60-O6Y" firstAttribute="top" secondItem="iC9-lu-qNm" secondAttribute="bottom" id="gjs-Fx-zLJ"/>
                             <constraint firstItem="iC9-lu-qNm" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="qOD-Ob-EaY"/>
                             <constraint firstItem="iC9-lu-qNm" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="rQ9-AO-nAx"/>
                         </constraints>

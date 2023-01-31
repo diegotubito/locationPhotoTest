@@ -6,17 +6,41 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     var viewModel: HomeViewModelProtocol = HomeViewModel()
     @IBOutlet weak var collectionView: UICollectionView!
+    
+    let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
         super .viewDidLoad()
         setupCollectionView()
         wire()
         viewModel.getPhotos()
+        
+        
+        locationManager.requestWhenInUseAuthorization()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
     
     private func setupCollectionView() {
@@ -35,8 +59,8 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func savePhoto(image: UIImage) {
-        viewModel.savePhoto(image: image)
+    private func savePhoto(_ image: UIImage,_ latitude: Double,_ longitude: Double) {
+        viewModel.savePhoto(image, latitude, longitude)
     }
 
     private func wire() {
@@ -85,8 +109,11 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         else { return }
         
         DispatchQueue.main.async {
-            self.savePhoto(image: image)
+            let latitude = self.locationManager.location?.coordinate.latitude ?? 0.0
+            let longitude = self.locationManager.location?.coordinate.longitude ?? 0.0
+            self.savePhoto(image, latitude, longitude)
             self.dismiss(animated: false)
+            print("location: ", self.locationManager.location?.coordinate)
         }
     }
 }
