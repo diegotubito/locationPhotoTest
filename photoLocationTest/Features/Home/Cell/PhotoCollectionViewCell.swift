@@ -17,9 +17,9 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(image: Photo) {
-//        photoImageView.image = image.thumbnail?.convertToImage
-        guard let imageData = image.image else { return }
-        photoImageView.image = UIImage(data: imageData)
+        guard let thumbnailImage = image.thumbnail?.convertToImage else { return }
+   
+        photoImageView.image = thumbnailImage
     }
     
     static var identifier: String {

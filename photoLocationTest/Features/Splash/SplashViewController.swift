@@ -38,8 +38,9 @@ class SplashViewController: UIViewController {
         guard
             let homeViewController = storyboard.instantiateViewController(withIdentifier: "HomeViewController") as? HomeViewController
         else { return }
-        homeViewController.modalPresentationStyle = .fullScreen
-        present(homeViewController, animated: false)
+        let navigationController = UINavigationController(rootViewController: homeViewController)
+        navigationController.modalPresentationStyle = .fullScreen
+        present(navigationController, animated: false)
     }
 }
 

@@ -35,13 +35,6 @@ class HomeViewController: UIViewController {
         }
     }
     
-    private func imageSize(image: UIImage) -> Int {
-        guard let imageJPEGData = image.jpegData(compressionQuality: 1) else { return -1 }
-        let imgData = NSData(data: imageJPEGData)
-        
-        return imgData.count
-    }
-    
     private func savePhoto(image: UIImage) {
         viewModel.savePhoto(image: image)
     }
@@ -53,10 +46,21 @@ class HomeViewController: UIViewController {
             self.collectionView.reloadData()
         }
     }
+    
+    func routeToDetailViewController(photo: Photo) {
+        let storyboard = UIStoryboard(name: "Detail", bundle: nil)
+        guard
+            let detailViewController = storyboard.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
+        else { return }
+        
+        detailViewController.photo = photo
+        detailViewController.modalPresentationStyle = .fullScreen
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 
 }
 
-extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return viewModel.getList().count
     }
@@ -65,6 +69,11 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PhotoCollectionViewCell.identifier, for: indexPath) as? PhotoCollectionViewCell
         cell?.setup(image: viewModel.getList()[indexPath.row])
         return cell ?? UICollectionViewCell()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let list = viewModel.getList()
+        routeToDetailViewController(photo: list[indexPath.row])
     }
 }
 
@@ -76,7 +85,7 @@ extension HomeViewController: UIImagePickerControllerDelegate, UINavigationContr
         else { return }
         
         DispatchQueue.main.async {
-            self.savePhoto(image: image.scalePreservingAspectRatio(targetSize: CGSize(width: 100, height: 100)))
+            self.savePhoto(image: image)
             self.dismiss(animated: false)
         }
     }
