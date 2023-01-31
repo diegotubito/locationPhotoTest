@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -22,12 +21,19 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aGM-RY-Leh">
+                                <rect key="frame" x="157.66666666666666" y="411.66666666666669" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <constraints>
                             <constraint firstItem="Vzq-4k-nTW" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1xU-vp-OfY"/>
+                            <constraint firstItem="aGM-RY-Leh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="83L-H0-JtP"/>
                             <constraint firstItem="Vzq-4k-nTW" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="gUF-xb-hIz"/>
+                            <constraint firstItem="aGM-RY-Leh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="mWS-u4-XhC"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,9 +42,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

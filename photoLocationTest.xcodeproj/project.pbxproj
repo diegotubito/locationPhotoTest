@@ -15,7 +15,6 @@
 		65079C37298839F900525FEA /* photoLocationTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C36298839F900525FEA /* photoLocationTestTests.swift */; };
 		65079C41298839F900525FEA /* photoLocationTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C40298839F900525FEA /* photoLocationTestUITests.swift */; };
 		65079C43298839F900525FEA /* photoLocationTestUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C42298839F900525FEA /* photoLocationTestUITestsLaunchTests.swift */; };
-		65079C512988473E00525FEA /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C502988473E00525FEA /* SplashViewModel.swift */; };
 		65079C5729884A4800525FEA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C5629884A4800525FEA /* HomeViewController.swift */; };
 		65079C5929884A5000525FEA /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65079C5829884A5000525FEA /* Home.storyboard */; };
 		65079C5D2988680200525FEA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C5C2988680200525FEA /* String+Extension.swift */; };
@@ -28,6 +27,8 @@
 		65079C7E29888CE600525FEA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C7D29888CE600525FEA /* CoreDataStack.swift */; };
 		65079C812988936B00525FEA /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C802988936B00525FEA /* DetailViewController.swift */; };
 		65079C832988938C00525FEA /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65079C822988938C00525FEA /* Detail.storyboard */; };
+		6545CC1529899182001090B4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6545CC1429899182001090B4 /* Localizable.strings */; };
+		654757E42989A33900F3FE10 /* HomeViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 654757E32989A33900F3FE10 /* HomeViewController+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,7 +61,6 @@
 		65079C3C298839F900525FEA /* photoLocationTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = photoLocationTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65079C40298839F900525FEA /* photoLocationTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoLocationTestUITests.swift; sourceTree = "<group>"; };
 		65079C42298839F900525FEA /* photoLocationTestUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = photoLocationTestUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		65079C502988473E00525FEA /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		65079C5629884A4800525FEA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		65079C5829884A5000525FEA /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		65079C5C2988680200525FEA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -73,6 +73,8 @@
 		65079C7D29888CE600525FEA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		65079C802988936B00525FEA /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		65079C822988938C00525FEA /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
+		6545CC1429899182001090B4 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		654757E32989A33900F3FE10 /* HomeViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeViewController+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,7 +125,6 @@
 		65079C1B298839F800525FEA /* photoLocationTest */ = {
 			isa = PBXGroup;
 			children = (
-				65079C1C298839F800525FEA /* AppDelegate.swift */,
 				65079C5A298867F000525FEA /* Common */,
 				65079C522988490E00525FEA /* Features */,
 				65079C532988496200525FEA /* Resources */,
@@ -154,7 +155,6 @@
 				65079C22298839F800525FEA /* Splash.storyboard */,
 				65079C2A298839F900525FEA /* LaunchScreen.storyboard */,
 				65079C20298839F800525FEA /* SplashViewController.swift */,
-				65079C502988473E00525FEA /* SplashViewModel.swift */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -162,6 +162,7 @@
 		65079C522988490E00525FEA /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				65079C1C298839F800525FEA /* AppDelegate.swift */,
 				65079C4F2988470600525FEA /* Splash */,
 				65079C5529884A3E00525FEA /* Home */,
 				65079C7F2988934A00525FEA /* Detail */,
@@ -175,6 +176,7 @@
 				65079C28298839F900525FEA /* Assets.xcassets */,
 				65079C2D298839F900525FEA /* Info.plist */,
 				65079C7529888A5200525FEA /* Photo.xcdatamodeld */,
+				6545CC1429899182001090B4 /* Localizable.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -183,10 +185,11 @@
 			isa = PBXGroup;
 			children = (
 				65079C64298876E900525FEA /* Cell */,
-				65079C5629884A4800525FEA /* HomeViewController.swift */,
-				65079C62298870EF00525FEA /* HomeModel.swift */,
 				65079C5829884A5000525FEA /* Home.storyboard */,
+				65079C5629884A4800525FEA /* HomeViewController.swift */,
+				654757E32989A33900F3FE10 /* HomeViewController+Extension.swift */,
 				65079C602988704B00525FEA /* HomeViewModel.swift */,
+				65079C62298870EF00525FEA /* HomeModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				65079C2C298839F900525FEA /* LaunchScreen.storyboard in Resources */,
 				65079C682988771A00525FEA /* PhotoCollectionViewCell.xib in Resources */,
 				65079C29298839F900525FEA /* Assets.xcassets in Resources */,
+				6545CC1529899182001090B4 /* Localizable.strings in Resources */,
 				65079C24298839F800525FEA /* Splash.storyboard in Resources */,
 				65079C5929884A5000525FEA /* Home.storyboard in Resources */,
 				65079C832988938C00525FEA /* Detail.storyboard in Resources */,
@@ -374,13 +378,13 @@
 				65079C672988771A00525FEA /* PhotoCollectionViewCell.swift in Sources */,
 				65079C812988936B00525FEA /* DetailViewController.swift in Sources */,
 				65079C5729884A4800525FEA /* HomeViewController.swift in Sources */,
+				654757E42989A33900F3FE10 /* HomeViewController+Extension.swift in Sources */,
 				65079C63298870EF00525FEA /* HomeModel.swift in Sources */,
 				65079C21298839F800525FEA /* SplashViewController.swift in Sources */,
 				65079C7E29888CE600525FEA /* CoreDataStack.swift in Sources */,
 				65079C612988704B00525FEA /* HomeViewModel.swift in Sources */,
 				65079C1D298839F800525FEA /* AppDelegate.swift in Sources */,
 				65079C5D2988680200525FEA /* String+Extension.swift in Sources */,
-				65079C512988473E00525FEA /* SplashViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

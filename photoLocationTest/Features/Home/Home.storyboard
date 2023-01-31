@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,20 +16,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wR-kR-dLv">
-                                <rect key="frame" x="32" y="754" width="326" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="ywW-jK-wZ4"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Take Photo"/>
-                                <connections>
-                                    <action selector="openCameraButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FDw-BS-5LU"/>
-                                </connections>
-                            </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="FrT-gW-hsY">
-                                <rect key="frame" x="0.0" y="47" width="390" height="691"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <rect key="frame" x="16" y="63" width="358" height="665"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rQZ-Jm-ihm">
                                     <size key="itemSize" width="128" height="128"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -48,21 +36,41 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0wR-kR-dLv">
+                                <rect key="frame" x="125.00000000000001" y="744" width="140.33333333333337" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ywW-jK-wZ4"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="camera" catalog="system" title="Take Photo"/>
+                                <connections>
+                                    <action selector="openCameraButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="FDw-BS-5LU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empty list, take your first picture..." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aMV-1Q-7qr">
+                                <rect key="frame" x="16" y="79" width="274" height="81.666666666666686"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FrT-gW-hsY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4Uo-sl-SFk"/>
-                            <constraint firstItem="FrT-gW-hsY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9nS-y2-bwB"/>
+                            <constraint firstItem="FrT-gW-hsY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="4Uo-sl-SFk"/>
+                            <constraint firstItem="FrT-gW-hsY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="9nS-y2-bwB"/>
+                            <constraint firstItem="aMV-1Q-7qr" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="32" id="ACx-8H-Baq"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="0wR-kR-dLv" secondAttribute="bottom" constant="16" id="DYi-iY-8kq"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0wR-kR-dLv" secondAttribute="trailing" constant="32" id="DYl-dp-E2z"/>
-                            <constraint firstItem="0wR-kR-dLv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="32" id="HXt-6r-KIo"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FrT-gW-hsY" secondAttribute="trailing" id="pEo-GZ-o7m"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aMV-1Q-7qr" secondAttribute="trailing" constant="100" id="WqW-jQ-OGQ"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="FrT-gW-hsY" secondAttribute="trailing" constant="16" id="pEo-GZ-o7m"/>
+                            <constraint firstItem="aMV-1Q-7qr" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="wTT-mq-kwb"/>
                             <constraint firstItem="0wR-kR-dLv" firstAttribute="top" secondItem="FrT-gW-hsY" secondAttribute="bottom" constant="16" id="z9T-cT-Yba"/>
+                            <constraint firstItem="0wR-kR-dLv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="zSE-vQ-eXu"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="collectionView" destination="FrT-gW-hsY" id="P0h-2m-FRl"/>
+                        <outlet property="emptyListLabel" destination="aMV-1Q-7qr" id="MKZ-pF-xKf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -71,8 +79,6 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="camera" catalog="system" width="128" height="93"/>
     </resources>
 </document>

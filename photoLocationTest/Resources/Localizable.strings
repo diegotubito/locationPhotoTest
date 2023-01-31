@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  photoLocationTest
+
+  Created by Gomez David Diego on 31/01/2023.
+  
+*/
+
+"GALERY" = "Galery";
+
+// MARK: Alert Messages
+"DELETE_WARNING_TITLE" = "Delete all photos";
+"DELETE_WARNING_MESSAGE" = "Are you sure you want to delete all photos?";
+"DELETE_WARNING_CONFIRM_BUTTON" = "Confirm";
+"DELETE_WARNING_CANCEL_BUTTON" = "Cancel";
+
+"DELETE_SUCCESS_TITLE" = "Deleted";
+"DELETE_SUCCESS_MESSAGE" = "All photos were deleted successfully";
+"DELETE_SUCCESS_CONFIRM_BUTTON" = "OK";

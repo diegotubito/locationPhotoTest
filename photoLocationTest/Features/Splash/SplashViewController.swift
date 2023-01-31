@@ -8,28 +8,31 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-    var viewModel: SplashViewModelProtocol?
+    
+    @IBOutlet weak var welcomeLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        viewModel = SplashViewModel()
-        wire()
-
-        viewModel?.loadInitValues()
     }
     
-    func wire() {
-        viewModel?.onSuccess = { [weak self] in
-            self?.animateView()
+    override func viewWillAppear(_ animated: Bool) {
+        super .viewWillAppear(animated)
+        
+        animateView {
+            // When animation finishes we navigate to Home View Controller.
+            self.routeToHomeViewController()
         }
     }
     
-    func animateView() {
-        UIView.animate(withDuration: 1) {
-            self.view.backgroundColor = .white
+    func animateView(completion: @escaping () -> Void) {
+        self.view.backgroundColor = .black
+        UIView.animate(withDuration: 2, delay: 0, options: .curveEaseOut) {
+            self.view.backgroundColor = .blue
+            self.welcomeLabel.transform = CGAffineTransform(scaleX: 4, y: 4)
+            self.welcomeLabel.alpha = 0
         } completion: { _ in
-            self.routeToHomeViewController()
+            completion()
         }
     }
     
