@@ -10,7 +10,6 @@
 		65079C1D298839F800525FEA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C1C298839F800525FEA /* AppDelegate.swift */; };
 		65079C21298839F800525FEA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C20298839F800525FEA /* SplashViewController.swift */; };
 		65079C24298839F800525FEA /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65079C22298839F800525FEA /* Splash.storyboard */; };
-		65079C27298839F800525FEA /* photoLocationTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65079C25298839F800525FEA /* photoLocationTest.xcdatamodeld */; };
 		65079C29298839F900525FEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65079C28298839F900525FEA /* Assets.xcassets */; };
 		65079C2C298839F900525FEA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65079C2A298839F900525FEA /* LaunchScreen.storyboard */; };
 		65079C37298839F900525FEA /* photoLocationTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C36298839F900525FEA /* photoLocationTestTests.swift */; };
@@ -25,6 +24,8 @@
 		65079C63298870EF00525FEA /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C62298870EF00525FEA /* HomeModel.swift */; };
 		65079C672988771A00525FEA /* PhotoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C652988771A00525FEA /* PhotoCollectionViewCell.swift */; };
 		65079C682988771A00525FEA /* PhotoCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65079C662988771A00525FEA /* PhotoCollectionViewCell.xib */; };
+		65079C7729888A5200525FEA /* Photo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 65079C7529888A5200525FEA /* Photo.xcdatamodeld */; };
+		65079C7E29888CE600525FEA /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65079C7D29888CE600525FEA /* CoreDataStack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +50,6 @@
 		65079C1C298839F800525FEA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65079C20298839F800525FEA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		65079C23298839F800525FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Splash.storyboard; sourceTree = "<group>"; };
-		65079C26298839F800525FEA /* photoLocationTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = photoLocationTest.xcdatamodel; sourceTree = "<group>"; };
 		65079C28298839F900525FEA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65079C2B298839F900525FEA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65079C2D298839F900525FEA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -67,6 +67,8 @@
 		65079C62298870EF00525FEA /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		65079C652988771A00525FEA /* PhotoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionViewCell.swift; sourceTree = "<group>"; };
 		65079C662988771A00525FEA /* PhotoCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoCollectionViewCell.xib; sourceTree = "<group>"; };
+		65079C7629888A5200525FEA /* Photo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Photo.xcdatamodel; sourceTree = "<group>"; };
+		65079C7D29888CE600525FEA /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +123,6 @@
 				65079C5A298867F000525FEA /* Common */,
 				65079C522988490E00525FEA /* Features */,
 				65079C532988496200525FEA /* Resources */,
-				65079C25298839F800525FEA /* photoLocationTest.xcdatamodeld */,
 			);
 			path = photoLocationTest;
 			sourceTree = "<group>";
@@ -168,6 +169,7 @@
 			children = (
 				65079C28298839F900525FEA /* Assets.xcassets */,
 				65079C2D298839F900525FEA /* Info.plist */,
+				65079C7529888A5200525FEA /* Photo.xcdatamodeld */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -187,6 +189,7 @@
 		65079C5A298867F000525FEA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				65079C7C29888CDE00525FEA /* CoreData */,
 				65079C5B298867F500525FEA /* Extensions */,
 			);
 			path = Common;
@@ -208,6 +211,14 @@
 				65079C662988771A00525FEA /* PhotoCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		65079C7C29888CDE00525FEA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				65079C7D29888CE600525FEA /* CoreDataStack.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,13 +354,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65079C7729888A5200525FEA /* Photo.xcdatamodeld in Sources */,
 				65079C5F2988682700525FEA /* Image+Extension.swift in Sources */,
 				65079C672988771A00525FEA /* PhotoCollectionViewCell.swift in Sources */,
 				65079C5729884A4800525FEA /* HomeViewController.swift in Sources */,
 				65079C63298870EF00525FEA /* HomeModel.swift in Sources */,
 				65079C21298839F800525FEA /* SplashViewController.swift in Sources */,
+				65079C7E29888CE600525FEA /* CoreDataStack.swift in Sources */,
 				65079C612988704B00525FEA /* HomeViewModel.swift in Sources */,
-				65079C27298839F800525FEA /* photoLocationTest.xcdatamodeld in Sources */,
 				65079C1D298839F800525FEA /* AppDelegate.swift in Sources */,
 				65079C5D2988680200525FEA /* String+Extension.swift in Sources */,
 				65079C512988473E00525FEA /* SplashViewModel.swift in Sources */,
@@ -696,13 +708,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		65079C25298839F800525FEA /* photoLocationTest.xcdatamodeld */ = {
+		65079C7529888A5200525FEA /* Photo.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				65079C26298839F800525FEA /* photoLocationTest.xcdatamodel */,
+				65079C7629888A5200525FEA /* Photo.xcdatamodel */,
 			);
-			currentVersion = 65079C26298839F800525FEA /* photoLocationTest.xcdatamodel */;
-			path = photoLocationTest.xcdatamodeld;
+			currentVersion = 65079C7629888A5200525FEA /* Photo.xcdatamodel */;
+			path = Photo.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

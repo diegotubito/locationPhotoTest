@@ -6,13 +6,12 @@
 //
 
 import UIKit
+import CoreData
 
 protocol HomeViewModelProtocol {
-    func setImage(image: UIImage)
-    func appendItem(image: UIImage)
-    func loadPhotos()
+    func getPhotos()
     func savePhoto(image: UIImage)
-    func getList() -> [UIImage]
+    func getList() -> [Photo]
     
     var onUpdateList: (() -> Void)? { get set }
 }
@@ -22,34 +21,45 @@ class HomeViewModel: HomeViewModelProtocol {
     var onUpdateList: (() -> Void)?
     
     init() {
-        self.model = HomeModel(image: UIImage())
+        self.model = HomeModel()
     }
-    
-    func setImage(image: UIImage) {
-        model = HomeModel(image: image)
-    }
-    
-    func appendItem(image: UIImage) {
-        model.list.append(image)
-    }
-    
-    func loadPhotos() {
-        // from Core Data
-        // mock data
-        model.list = [UIImage(systemName: "pencil")!]
         
-        onUpdateList?()
-    }
-    
     func savePhoto(image: UIImage) {
-        // save to core data
+        let thumbnailImage = image.scalePreservingAspectRatio(targetSize: CGSize(width: 100, height: 100))
         
-        //mock data
-        model.list.append(image)
-        onUpdateList?()
+        guard let thumbnail = thumbnailImage.convertToBase64,
+              let imageData = image.jpegData(compressionQuality: 1)
+        else { return }
+        
+        let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+        let newPhoto = Photo(context: managedContext)
+        newPhoto.setValue(Date(), forKey: #keyPath(Photo.createdAt))
+        newPhoto.setValue(thumbnail, forKey: #keyPath(Photo.thumbnail))
+        newPhoto.setValue(imageData, forKey: #keyPath(Photo.image))
+        
+        self.model.list.insert(newPhoto, at: 0)
+        AppDelegate.sharedAppDelegate.coreDataStack.saveContext() // Save changes in CoreData
+        
+        DispatchQueue.main.async {
+            self.onUpdateList?()
+        }
     }
     
-    func getList() -> [UIImage] {
+    func getPhotos() {
+        let photoFetch: NSFetchRequest<Photo> = Photo.fetchRequest()
+        let sortByDate = NSSortDescriptor(key: #keyPath(Photo.createdAt), ascending: true)
+        photoFetch.sortDescriptors = [sortByDate]
+        do {
+            let managedContext = AppDelegate.sharedAppDelegate.coreDataStack.managedContext
+            let results = try managedContext.fetch(photoFetch)
+            model.list = results
+            onUpdateList?()
+        } catch let error as NSError {
+            print("Fetch error: \(error) description: \(error.userInfo)")
+        }
+    }
+    
+    func getList() -> [Photo] {
         model.list
     }
 }

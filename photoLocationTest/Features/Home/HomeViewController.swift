@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
         super .viewDidLoad()
         setupCollectionView()
         wire()
-        viewModel.loadPhotos()
+        viewModel.getPhotos()
     }
     
     private func setupCollectionView() {
@@ -50,11 +50,10 @@ class HomeViewController: UIViewController {
         viewModel.onUpdateList = { [weak self] in 
             guard let self = self else { return }
            
-            DispatchQueue.main.async {
-                self.collectionView.reloadData()
-            }
+            self.collectionView.reloadData()
         }
     }
+
 }
 
 extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSource {

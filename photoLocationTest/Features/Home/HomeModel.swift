@@ -8,10 +8,5 @@
 import UIKit
 
 struct HomeModel {
-    var image: UIImage
-    var list: [UIImage] = []
-    
-    init(image: UIImage) {
-        self.image = image
-    }
+    var list: [Photo] = []
 }

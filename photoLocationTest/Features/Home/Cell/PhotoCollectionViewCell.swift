@@ -16,8 +16,10 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
     
-    func setup(image: UIImage) {
-        photoImageView.image = image
+    func setup(image: Photo) {
+//        photoImageView.image = image.thumbnail?.convertToImage
+        guard let imageData = image.image else { return }
+        photoImageView.image = UIImage(data: imageData)
     }
     
     static var identifier: String {
